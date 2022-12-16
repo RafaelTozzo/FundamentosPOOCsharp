@@ -1,0 +1,224 @@
+Paradigma orientado a objetos:
+    Para resolver problemas de uma forma organizada dividindo a aplicação, para que outros programadores que pegarem o codigo
+    consiga entendelo de forma mais facil e rapida para dar manutenção e criar novas funcionalidades.
+
+
+O que compoem um objeto:   
+    Propriedades - Variaveis
+    Metodos - Funções
+    Eventos
+
+
+Encapsulamento:
+    Agrupar o que faz sentido estar junto.
+    Ex: 
+    class Pagamento
+    {
+        DateTime Vencimento; --> Propriedades
+
+        void Pagar() { } --> Metodos
+    }
+
+
+Abstração:
+    Expor somente o necessario, abstrair da implementação dados desnecessarios.
+    Ex:
+    class Payment
+    {
+        DateTime DueDate;
+
+        void Pay()
+        {
+            ConsultCardBalance();
+        }
+
+        private void ConsultCardBalance() { }
+    }
+
+
+Herança:
+    Poder de herdar funcionalidades de outros objetos
+
+
+Polimosfismo:
+    Uma classe ou objeto pode ter varias formas
+    Ex: Usando o virtual na classe Pai e o override na classe filho para
+        subscrever o metodo e ter uma outra regra de pagamento
+    
+     class Payment
+    {
+        public DateTime DueDate;
+
+        public virtual void Pay()
+        {
+            ConsultCardBalance();
+        }
+
+        private void ConsultCardBalance() { }
+    }
+
+    class PaymentSlip : Payment
+    {
+        public int slipNumber;
+
+        public override void Pay()
+        {
+            // Regra pagamento com boleto usando ovveride para subscrever o metodo pai (Conceito polimorfisto)
+        }
+    }
+
+    class PaymentCreditCard : Payment
+    {
+        public string? cardNumber;
+
+        public override void Pay()
+        {
+            // Regra de pagamento cartão de credito usando ovveride para subscrever o metodo pai (Conceito polimorfisto)
+        }
+    }
+
+
+Modificadores de acesso:
+    private: Somente visivel dentro da classe, não pode ser acessado exernamente. Usar _testeExemplo para indentificar que é private
+
+    protected: Visivel para a classe filho, a classe que utilizar da herança vai ter a visibilidade das propriedades e metodos.
+
+    internal: Fica disponivel dentro do mesmo namespace
+
+    public: Fica visivel como um todo, em toda a aplicação independente do namespace
+
+
+Tipos complexos:
+    Classes que contem propriedades e metodos que podem ser instanciados em outras classes.
+
+
+Propriedades:
+    Diferença entre propriedades e variaveis é os acessores { get; set; } podendo atribuir ou receber valores.
+    Digitando prop: public int MyProperty { get; set; }
+
+
+Metodos:
+
+    Sobrecarga de metodos:
+        Metodos com mesmo nome porem com assinaturas diferentes.
+
+        public class Pagamento
+        {
+            public void Pagar(string numero) { }
+
+            public void Pagar(string numero, DateTime vencimento) { }
+
+            public void Pagar(string numero, DateTime vencimento, bool pagarAposVencimento = false) { }
+        }
+
+
+    Sobre escrita(override) de metodos:
+        É a reescrita do metodo
+
+        public class Pagamento
+        {
+            public virtual void Pagar(string numero)
+            {
+                Console.WriteLine("Pagar");
+            }
+        }
+
+        public class PagamentoCartao : Pagamento
+        {
+            public override void Pagar(string numero)
+            {
+                Console.WriteLine("Pagar com cartao");
+            }
+        }
+
+
+    Metodo Contrutor:
+        Recebe o mesmo nome da classe para iniciar a classe, preencher as variaveis.
+        Metodos contrutores não retornam nenhum valor
+
+        public class Pagamento
+        {
+            public DateTime DataPagamento { get; set; }
+
+            public Pagamento() <--- Metodo Contrutor
+            {
+                Console.WriteLine("Iniciando pagamento");
+                DataPagamento = DateTime.Now;
+            }
+
+            public virtual void Pagar(string numero)
+            {
+                Console.WriteLine("Pagar");
+            }
+        }
+
+        public class PagamentoCartao : Pagamento
+        {
+            public override void Pagar(string numero)
+            {
+                Console.WriteLine("Pagar com cartao");
+            }
+        }
+
+
+Using e Dispose:
+    Utilizando o using:
+
+    namespace FundamentosPOOCsharp
+{
+    public class UsingDispose
+    {
+        public static void UsingDisposeEx()
+        {
+            using (var pagamento = new Pagamento())
+            {
+                Console.WriteLine("Processando o pagamento");
+            }
+
+            Console.WriteLine("*------------------*");
+        }
+
+        public class Pagamento : IDisposable
+        {
+            public Pagamento()
+            {
+                Console.WriteLine("Iniciando pagamento");
+            }
+
+            public void Dispose()
+            {
+                Console.WriteLine("Finalizando pagamento");
+            }
+        }
+    }
+}
+
+
+Static class:
+    static class não pode ser instanciada e sempre mantem a mesma informação para a aplicação.
+    Quando a class é static os metodos e propriedades são static tb.
+    Aplicações multi usuarios não faz sentido em usar static, já que recebe requisições diferentes e respostas diferentes.
+
+
+Sealed class:
+    Inibe da class ser estendida, de se criar uma herança dela
+    Ex:
+    public sealed class Pagamento { }
+
+
+Partial class:
+    Consegue separar/segmentar uma classe em mais partes
+
+
+Interfaces:
+    São os contratos, não diz como fazer e sim o que precisa ser feito. São as definições que o objeto precisa.
+
+
+Classes abstratas:
+    Não podem ser instanciadas, só podem ser herdadas
+    Diferente das interfaces, as classes abstratas podem ter uma implementação base do que deve ser feito.
+
+
+Comparando Objetos:
+    Precisa ser implementado a interface IEquatable<> para conseguir fazer a compara de objetos,
+    pois usando o == não consegue comparar a igualdade pois esta alocado em endereços diferentes da memoria.

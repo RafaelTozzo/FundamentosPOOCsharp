@@ -1,0 +1,15 @@
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\bin\Debug\net6.0\FundamentosPOOCsharp.exe
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\bin\Debug\net6.0\FundamentosPOOCsharp.deps.json
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\bin\Debug\net6.0\FundamentosPOOCsharp.runtimeconfig.json
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\bin\Debug\net6.0\FundamentosPOOCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\bin\Debug\net6.0\FundamentosPOOCsharp.pdb
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.csproj.AssemblyReference.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.AssemblyInfoInputs.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.AssemblyInfo.cs
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.csproj.CoreCompileInputs.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\refint\FundamentosPOOCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.pdb
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\FundamentosPOOCsharp.genruntimeconfig.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\POOCsharp\FundamentosPOOCsharp\obj\Debug\net6.0\ref\FundamentosPOOCsharp.dll
